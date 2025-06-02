@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Developer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{primary:'#6366f1',secondary:'#4f46e5'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>:where([class^="ri-"])::before { content: "\f3c2"; }</style>
+</head>
+<body class="w-full min-h-screen bg-white">
+
+<main class="max-w-6xl mx-auto">
+<section class="relative h-[400px] md:h-[600px] overflow-hidden">
+<img src="https://drive.google.com/thumbnail?id=13YmBMLpeDFlcFRMLFCxRm9X2iNk5lZBp&sz=w1920"
+class="w-full h-full object-cover" alt="Hero">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
+<!-- Profile Image in top right -->
+<div class="absolute top-6 right-6">
+<img src="https://drive.google.com/thumbnail?id=15DqAOmm7SN-jfk-OMwZVDn7leZo5AcsI&sz=w120"
+class="w-16 h-16 md:w-20 md:h-20 rounded-full border-3 border-white shadow-lg" alt="Salih Bağlan">
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white">
+<h1 class="text-2xl md:text-4xl font-bold mb-2 md:mb-4">Hello, I'm Salih Bağlan</h1>
+<p class="text-sm md:text-lg mb-4 md:mb-6">Creative games developed with Unity</p>
+<button onclick="openAboutModal()" class="bg-primary text-white px-6 py-3 rounded-button flex items-center gap-2 hover:bg-secondary transition-colors">
+About Me
+<i class="ri-arrow-right-line"></i>
+</button>
+</div>
+</section>
+<section class="px-4 py-8 md:py-16">
+<h2 class="text-xl md:text-3xl font-bold mb-6 md:mb-12">My Projects</h2>
+
+<!-- Tab Navigation -->
+<div class="flex justify-center mb-8">
+<div class="bg-gray-100 p-1 rounded-lg inline-flex">
+<button onclick="switchTab('published')" id="publishedTab" class="px-6 py-2 rounded-md font-medium transition-colors bg-primary text-white flex items-center gap-2">
+<i class="ri-google-play-line text-lg"></i>
+Published Games
+</button>
+<button onclick="switchTab('prototype')" id="prototypeTab" class="px-6 py-2 rounded-md font-medium transition-colors text-gray-600 hover:text-gray-800 flex items-center gap-2">
+<i class="ri-flask-line text-lg"></i>
+Prototype Games
+</button>
+</div>
+</div>
+
+<!-- Published Games Tab Content -->
+<div id="publishedGames" class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
+<!-- Game 1: Merge Character -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1DZBTvNFwT7H-KAmcZ2QMdv0iQnw0AfFF&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Merge Character Game">
+<div class="absolute top-4 left-4">
+<img src="https://drive.google.com/thumbnail?id=1zzuS03C-kmQy_I5lbZPxyYxdrvZbhavH&sz=w80"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white" alt="Game Icon">
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Merge Character: Mini Game</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">⚔️ <strong>Merge Character</strong> - Combine heroes, level up, and create the ultimate team! 💪</p>
+<p class="mb-2">🚀 Unlock upgrades to boost production and rise to the top. 🏆</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Mobile Game</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Strategy</span>
+</div>
+<button onclick="openGameModal('mergeCharacter')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Game</button>
+</div>
+</div>
+
+<!-- Game 2: Litlestars Wonderland -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1XQZJmrSs3dElFnmzT-t1p6AvIfloogr_&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Litlestars Wonderland Game">
+<div class="absolute top-4 left-4">
+<img src="https://drive.google.com/thumbnail?id=1Mb4fCOs4u08p4tpazjm0niYJfYAEAcFM&sz=w80"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white" alt="Game Icon">
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Litlestars Wonderland: Cow Game</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">🍼 Experience the joy of taking care of adorable babies, collecting stars, and popping balloons! ✨</p>
+<p class="mb-2">🐄 Three engaging mini-games featuring our lovable cow: racing, tractor driving, and airplane piloting! 🚜✈️</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Kids Game</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Educational</span>
+</div>
+<button onclick="openGameModal('litlestarsWonderland')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Game</button>
+</div>
+</div>
+
+<!-- Game 3: Merge Of Dagma -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1znhoM5ej5OYwp-6D4aEBrYaIky2QoBBN&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Merge Of Dagma Game">
+<div class="absolute top-4 left-4">
+<img src="https://drive.google.com/thumbnail?id=1iPsaRFUBIYpynQaVNO0es6BUYozyr5Mo&sz=w80"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white" alt="Game Icon">
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Merge Of Dagma</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">📜 <strong>Merge Of Dagma</strong> - Legendary Character Fusion Game! ⚔️🔥</p>
+<p class="mb-2">🌟 Exciting character merging game set in the World of Dagma universe!</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">RPG</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Fantasy</span>
+</div>
+<button onclick="openGameModal('mergeOfDagma')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Game</button>
+</div>
+</div>
+
+<!-- Game 4: Colorful Playland -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1rVaBvll-y_zMjUUPjVzbJ-0AhFzkUoeD&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Colorful Playland Game">
+<div class="absolute top-4 left-4">
+<img src="https://drive.google.com/thumbnail?id=1XJYOG2IGrJ281QdtNR1-oYQQVBUbLKWF&sz=w80"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white" alt="Game Icon">
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Colorful Playland: Baby Game</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">🎮 Vibrant and exciting experience with interactive mini-games for children! 🎈</p>
+<p class="mb-2">⭐ Balloon popping, star popping, corn peeling, cow game, and more fun activities! 🌽🐮</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Kids Game</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Educational</span>
+</div>
+<button onclick="openGameModal('colorfulPlayland')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Game</button>
+</div>
+</div>
+
+<!-- Game 5: Merge 2048 Extreme -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1dzxfq1WZ5x4bSSZxp9rJLzNXTQguSVnF&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Merge 2048 Extreme Game">
+<div class="absolute top-4 left-4">
+<img src="https://drive.google.com/thumbnail?id=1BEgdbQjKZxJz5TMQS4z-py2NWbSqE5up&sz=w80"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white" alt="Game Icon">
+</div>
+<!-- Deprecated Badge -->
+<div class="absolute top-4 right-4">
+<span class="bg-orange-500 text-white text-xs px-2 py-1 rounded-full">Deprecated</span>
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Merge 2048: Extreme 2048</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">🧠 Addictive puzzle game filled with strategy and intelligence! 🧩</p>
+<p class="mb-2">🔢 Takes the classic 2048 game to a new level of excitement and fun!</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Puzzle</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Strategy</span>
+</div>
+<button onclick="openGameModal('merge2048Extreme')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Game</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Prototype Games Tab Content -->
+<div id="prototypeGames" class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 hidden">
+
+<!-- Prototype Game 1: Angry Birds Clone -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1iBtFzXubNVNd8VHIre_WEz_O1u_GLbR4&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Angry Birds Clone Prototype">
+<div class="absolute top-4 left-4">
+<img src="https://img.icons8.com/ios/50/puzzle.png"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white bg-white p-2" alt="Prototype Icon">
+</div>
+<!-- Prototype Badge -->
+<div class="absolute top-4 right-4">
+<span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Prototype</span>
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Angry Birds Clone: Prototype</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">🐦 <strong>Angry Birds Clone</strong> - Classic physics-based puzzle game with evolution feature! 🧬</p>
+<p class="mb-2">🎯 Launch birds, destroy structures, and evolve new powerful bird species! ⚡</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Physics</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Puzzle</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Evolution</span>
+</div>
+<!-- Technology Icons -->
+<div class="grid grid-cols-4 gap-2 mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=1ZQSyITCJ2Lt7LA8R-jeEhc4Su1VrAS7T&sz=w64" class="w-8 h-8" alt="Unity" />
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/?size=100&id=Fycm8TUhWmFU&format=png&color=000000" class="w-8 h-8" alt="C#">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/physics.png" class="w-8 h-8 opacity-70" alt="Physics">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/jigsaw.png" class="w-8 h-8 opacity-70" alt="Puzzle">
+</div>
+</div>
+<button onclick="openGameModal('angryBirds')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Prototype</button>
+</div>
+</div>
+
+<!-- Prototype Game 2: Bomberman Multiplayer -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1Be9hKSrKLHYh6XOOzXXXFgoE1mn2qa5a&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Bomberman Multiplayer Prototype">
+<div class="absolute top-4 left-4">
+<img src="https://img.icons8.com/ios/50/puzzle.png"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white bg-white p-2" alt="Prototype Icon">
+</div>
+<!-- Prototype Badge -->
+<div class="absolute top-4 right-4">
+<span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Prototype</span>
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Bomberman Multiplayer: Prototype</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">� <strong>Bomberman Multiplayer</strong> - Classic bomberman game with online multiplayer support! 🎮</p>
+<p class="mb-2">🌐 Real-time multiplayer gameplay with lobby system and chat functionality! 💬</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Photon</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">PlayFab</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Multiplayer</span>
+</div>
+<!-- Technology Icons -->
+<div class="grid grid-cols-5 gap-2 mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=1ZQSyITCJ2Lt7LA8R-jeEhc4Su1VrAS7T&sz=w64" class="w-8 h-8" alt="Unity" />
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/?size=100&id=Fycm8TUhWmFU&format=png&color=000000" class="w-8 h-8" alt="C#">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=17zNT7gOH_-trnfb5YXfPEQbk06tB3nkR&sz=w64" class="w-8 h-8" alt="Photon">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=1bSAXr3mIehtuGuTGk9uzp7OwZOuNX8xk&sz=w64" class="w-8 h-8" alt="PlayFab" style="filter: brightness(0) saturate(100%) invert(0%);">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=1NqxIEhk5mbEcWRJoRuBwZz1a3NFjHe67&sz=w64" class="w-8 h-8" alt="Multiplayer">
+</div>
+</div>
+<button onclick="openGameModal('bombermanMultiplayer')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Prototype</button>
+</div>
+</div>
+
+<!-- Prototype Game 3: Bullet Rush -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1smEnQ-fnmC8jYTo4cO-tZywIX1x5672f&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Bullet Rush Prototype">
+<div class="absolute top-4 left-4">
+<img src="https://img.icons8.com/ios/50/puzzle.png"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white bg-white p-2" alt="Prototype Icon">
+</div>
+<!-- Prototype Badge -->
+<div class="absolute top-4 right-4">
+<span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Prototype</span>
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Bullet Rush: Prototype</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">🎯 <strong>Bullet Rush</strong> - Top-down action-arcade game with fast-paced gameplay! 🔫</p>
+<p class="mb-2">🚁 Survive enemy waves and reach the helicopter to complete levels! ✈️</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Mobile</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Action</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Arcade</span>
+</div>
+<!-- Technology Icons -->
+<div class="grid grid-cols-5 gap-2 mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=1ZQSyITCJ2Lt7LA8R-jeEhc4Su1VrAS7T&sz=w64" class="w-8 h-8" alt="Unity" />
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/?size=100&id=Fycm8TUhWmFU&format=png&color=000000" class="w-8 h-8" alt="C#">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/smartphone.png" class="w-8 h-8 opacity-70" alt="Mobile">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/target.png" class="w-8 h-8 opacity-70" alt="Action">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/joystick.png" class="w-8 h-8 opacity-70" alt="Arcade">
+</div>
+</div>
+<button onclick="openGameModal('bulletRush')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Prototype</button>
+</div>
+</div>
+
+<!-- Prototype Game 4: Helix Jump Clone -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1FL5uaPsuaZFWmDPh7bBpZ7fMzM6TWQyT&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Helix Jump Clone Prototype">
+<div class="absolute top-4 left-4">
+<img src="https://img.icons8.com/ios/50/puzzle.png"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white bg-white p-2" alt="Prototype Icon">
+</div>
+<!-- Prototype Badge -->
+<div class="absolute top-4 right-4">
+<span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Prototype</span>
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Helix Jump Clone: Prototype</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">🌀 <strong>Helix Jump Clone</strong> - Addictive spiral tower jumping game with smooth physics! 🎯</p>
+<p class="mb-2">⚡ Navigate through colorful helix platforms and reach the bottom! 🏆</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Mobile</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Casual</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Physics</span>
+</div>
+<!-- Technology Icons -->
+<div class="grid grid-cols-5 gap-2 mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=1ZQSyITCJ2Lt7LA8R-jeEhc4Su1VrAS7T&sz=w64" class="w-8 h-8" alt="Unity" />
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/?size=100&id=Fycm8TUhWmFU&format=png&color=000000" class="w-8 h-8" alt="C#">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/smartphone.png" class="w-8 h-8 opacity-70" alt="Mobile">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/controller.png" class="w-8 h-8 opacity-70" alt="Casual">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/physics.png" class="w-8 h-8 opacity-70" alt="Physics">
+</div>
+</div>
+<button onclick="openGameModal('helixJump')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Prototype</button>
+</div>
+</div>
+
+<!-- Prototype Game 5: Count Masters Clone -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative">
+<img src="https://drive.google.com/thumbnail?id=1Worl3-fEFlD6fD9PAkUEIid94-yl2Asy&sz=w800"
+class="w-full h-[250px] md:h-[300px] object-cover" alt="Count Masters Clone Prototype">
+<div class="absolute top-4 left-4">
+<img src="https://img.icons8.com/ios/50/puzzle.png"
+class="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg border-2 border-white bg-white p-2" alt="Prototype Icon">
+</div>
+<!-- Prototype Badge -->
+<div class="absolute top-4 right-4">
+<span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Prototype</span>
+</div>
+</div>
+<div class="p-4 md:p-6">
+<h3 class="text-lg md:text-xl font-bold mb-2">Count Masters Clone: Prototype</h3>
+<div class="text-sm text-gray-600 mb-4 leading-relaxed">
+<p class="mb-2">🧍‍♂️ <strong>Count Masters Clone</strong> - Crowd running game with strategic gate choices! 🚪</p>
+<p class="mb-2">⚡ Build your army, pass through gates, and defeat enemies in epic battles! 🏆</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Unity</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">C#</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Mobile</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Hyper-Casual</span>
+<span class="px-2 py-1 text-xs bg-gray-100 rounded-full">Strategy</span>
+</div>
+<!-- Technology Icons -->
+<div class="grid grid-cols-4 gap-2 mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://drive.google.com/thumbnail?id=1ZQSyITCJ2Lt7LA8R-jeEhc4Su1VrAS7T&sz=w64" class="w-8 h-8" alt="Unity" />
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/?size=100&id=Fycm8TUhWmFU&format=png&color=000000" class="w-8 h-8" alt="C#">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/smartphone.png" class="w-8 h-8 opacity-70" alt="Mobile">
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+<img src="https://img.icons8.com/ios/50/running.png" class="w-8 h-8 opacity-70" alt="Hyper-Casual">
+</div>
+</div>
+<button onclick="openGameModal('countMasters')" class="w-full bg-primary text-white py-2 rounded-button font-medium">View Prototype</button>
+</div>
+</div>
+
+</div>
+</section>
+<section class="px-4 py-8 md:py-16 bg-gray-50">
+<h2 class="text-xl md:text-3xl font-bold mb-6 md:mb-12">About Me</h2>
+<div class="text-center mb-6 max-w-2xl mx-auto">
+<img src="https://drive.google.com/thumbnail?id=15DqAOmm7SN-jfk-OMwZVDn7leZo5AcsI"
+     class="w-[120px] h-[120px] md:w-[160px] md:h-[160px] rounded-full mx-auto mb-4 md:mb-6"
+     alt="Profil Fotoğrafı" />
+
+<p class="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6">
+I have been working in game development for 5 years. I am an expert in Unity and C#. I love developing creative and user-friendly games.
+</p>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm">
+<img src="https://drive.google.com/thumbnail?id=1ZQSyITCJ2Lt7LA8R-jeEhc4Su1VrAS7T&sz=w64" class="w-8 h-8" alt="Unity" />
+</div>
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm">
+<img src="https://img.icons8.com/?size=100&id=Fycm8TUhWmFU&format=png&color=000000"
+class="w-8 h-8" alt="C#">
+</div>
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm">
+<img src="https://img.icons8.com/?size=100&id=KDGdN57NLSJa&format=png&color=000000"
+class="w-8 h-8" alt="Blender">
+</div>
+<div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm">
+<img src="https://img.icons8.com/?size=100&id=13677&format=png&color=000000"
+class="w-8 h-8" alt="Photoshop">
+</div>
+</div>
+</section>
+<section class="px-4 py-8 md:py-16">
+<h2 class="text-xl md:text-3xl font-bold mb-6 md:mb-12">Contact</h2>
+<div class="space-y-4 max-w-lg mx-auto">
+<div class="w-full flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
+<i class="ri-mail-line text-xl text-primary"></i>
+<span class="text-sm flex-1">salihbaglan36@gmail.com</span>
+<a href="mailto:salihbaglan36@gmail.com" target="_blank" class="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-100 transition-colors shadow-sm">
+<img src="https://img.icons8.com/color/48/gmail-new.png" class="w-5 h-5" alt="Gmail" />
+</a>
+</div>
+<div class="w-full flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
+<i class="ri-phone-line text-xl text-primary"></i>
+<span class="text-sm flex-1">+90 531 354 01 57</span>
+<a href="https://wa.me/905313540157" target="_blank" class="flex items-center justify-center w-8 h-8 bg-green-500 rounded-full hover:bg-green-600 transition-colors">
+<i class="ri-whatsapp-line text-white text-sm"></i>
+</a>
+</div>
+<div class="flex justify-center gap-6">
+<a href="https://www.linkedin.com/in/salih-baglan-a4a738291/" target="_blank" class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+<i class="ri-linkedin-line text-xl text-primary"></i>
+</a>
+<a href="https://github.com/salihbaglan" target="_blank" class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+<i class="ri-github-line text-xl text-primary"></i>
+</a>
+<a href="https://www.facebook.com/salih.bgl.9/" target="_blank" class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+<i class="ri-facebook-line text-xl text-primary"></i>
+</a>
+</div>
+</div>
+</section>
+</main>
+
+<!-- About Me Modal -->
+<div id="aboutModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4" onclick="closeAboutModal()">
+<div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+<div class="p-6">
+<!-- Modal Header -->
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold">About Salih Bağlan</h2>
+<button onclick="closeAboutModal()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+
+<!-- Image Slider -->
+<div class="relative mb-6">
+<div class="overflow-hidden rounded-lg bg-gray-100">
+<div id="aboutImageSlider" class="flex transition-transform duration-300 ease-in-out">
+<div class="w-full flex-shrink-0 flex items-center justify-center min-h-[300px] md:min-h-[400px]">
+<img src="https://drive.google.com/thumbnail?id=15DqAOmm7SN-jfk-OMwZVDn7leZo5AcsI&sz=w800" class="max-w-full max-h-[300px] md:max-h-[400px] object-contain rounded-lg" alt="Salih Bağlan Profile">
+</div>
+<div class="w-full flex-shrink-0 flex items-center justify-center min-h-[300px] md:min-h-[400px]">
+<img src="https://drive.google.com/thumbnail?id=1PJyfqBn3f885gXfgSWTiH1TYR0GXDPbd&sz=w800" class="max-w-full max-h-[300px] md:max-h-[400px] object-contain rounded-lg" alt="Salih Bağlan Workspace">
+</div>
+</div>
+</div>
+<!-- Slider Controls -->
+<button onclick="prevAboutSlide()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
+<i class="ri-arrow-left-line"></i>
+</button>
+<button onclick="nextAboutSlide()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
+<i class="ri-arrow-right-line"></i>
+</button>
+<!-- Slide Indicators -->
+<div class="flex justify-center mt-4 space-x-2">
+<button onclick="goToAboutSlide(0)" class="w-3 h-3 rounded-full bg-primary about-slide-indicator"></button>
+<button onclick="goToAboutSlide(1)" class="w-3 h-3 rounded-full bg-gray-300 about-slide-indicator"></button>
+</div>
+</div>
+
+<!-- About Content -->
+<div class="mb-6">
+<h3 class="text-lg font-bold mb-4">Game Developer & Unity Expert</h3>
+<div class="text-gray-600 leading-relaxed space-y-4">
+<p class="mb-4">🎮 <strong>Welcome!</strong> I'm Salih Bağlan, a passionate game developer with 3+ years of experience in creating engaging and innovative mobile games. I specialize in Unity and C# development, bringing creative ideas to life through interactive gaming experiences.</p>
+
+<div class="mb-4">
+<h4 class="font-semibold text-gray-800 mb-2">🚀 Professional Experience:</h4>
+<ul class="list-disc list-inside space-y-1 text-sm">
+<li><strong>3+ years</strong> of game development experience</li>
+<li><strong>Unity & C#</strong> expertise with advanced proficiency</li>
+<li><strong>Mobile game development</strong> for Android platforms</li>
+<li><strong>Published games</strong> on Google Play Store</li>
+<li><strong>Cross-platform development</strong> experience</li>
+</ul>
+</div>
+
+<div class="mb-4">
+<h4 class="font-semibold text-gray-800 mb-2">🎯 Specializations:</h4>
+<ul class="list-disc list-inside space-y-1 text-sm">
+<li><strong>Strategy Games:</strong> Merge mechanics, puzzle games</li>
+<li><strong>Educational Games:</strong> Kids-friendly interactive experiences</li>
+<li><strong>RPG Elements:</strong> Character progression, fantasy worlds</li>
+<li><strong>UI/UX Design:</strong> User-friendly interfaces</li>
+<li><strong>Game Optimization:</strong> Performance and memory management</li>
+</ul>
+</div>
+
+<div class="mb-4">
+<h4 class="font-semibold text-gray-800 mb-2">🏆 Notable Achievements:</h4>
+<ul class="list-disc list-inside space-y-1 text-sm">
+<li>Successfully published <strong>5 mobile games</strong> on Google Play Store</li>
+<li>Developed games across multiple genres: Strategy, Educational, RPG, Puzzle</li>
+<li>Created engaging gameplay mechanics for different age groups</li>
+<li>Implemented complex merge systems and character progression</li>
+<li>Designed intuitive user interfaces for mobile platforms</li>
+</ul>
+</div>
+
+<div class="mb-4">
+<h4 class="font-semibold text-gray-800 mb-2">🛠️ Technical Skills:</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-gray-100 p-3 rounded-lg text-center">
+<img src="https://drive.google.com/thumbnail?id=1ZQSyITCJ2Lt7LA8R-jeEhc4Su1VrAS7T&sz=w64" class="w-6 h-6 mx-auto mb-1" alt="Unity" />
+<div class="text-sm font-medium">Unity</div>
+</div>
+<div class="bg-gray-100 p-3 rounded-lg text-center">
+<i class="ri-code-line text-2xl text-primary mb-1"></i>
+<div class="text-sm font-medium">C#</div>
+</div>
+<div class="bg-gray-100 p-3 rounded-lg text-center">
+<i class="ri-smartphone-line text-2xl text-primary mb-1"></i>
+<div class="text-sm font-medium">Mobile Dev</div>
+</div>
+<div class="bg-gray-100 p-3 rounded-lg text-center">
+<i class="ri-palette-line text-2xl text-primary mb-1"></i>
+<div class="text-sm font-medium">UI/UX</div>
+</div>
+</div>
+</div>
+
+<p class="text-center text-gray-700 font-medium">💡 <em>"Creating games that bring joy and learning together, one project at a time."</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Game Modal -->
+<div id="gameModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+<div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-6">
+<!-- Modal Header -->
+<div class="flex justify-between items-center mb-6">
+<h2 id="modalTitle" class="text-2xl font-bold">Game Details</h2>
+<button onclick="closeGameModal()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+
+<!-- Image Slider -->
+<div class="relative mb-6">
+<div class="overflow-hidden rounded-lg bg-gray-100">
+<div id="imageSlider" class="flex transition-transform duration-300 ease-in-out">
+<!-- Images will be dynamically loaded here -->
+</div>
+</div>
+<!-- Slider Controls -->
+<button onclick="prevSlide()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
+<i class="ri-arrow-left-line"></i>
+</button>
+<button onclick="nextSlide()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
+<i class="ri-arrow-right-line"></i>
+</button>
+<!-- Slide Indicators -->
+<div id="slideIndicators" class="flex justify-center mt-4 space-x-2">
+<!-- Indicators will be dynamically loaded here -->
+</div>
+</div>
+
+<!-- Game Description -->
+<div class="mb-6">
+<h3 class="text-lg font-bold mb-3">About the Game</h3>
+<div id="gameDescription" class="text-gray-600 leading-relaxed">
+<!-- Description will be dynamically loaded here -->
+</div>
+</div>
+
+<!-- Action Buttons -->
+<div id="actionButtons" class="flex flex-col sm:flex-row gap-4">
+<!-- Buttons will be dynamically loaded here -->
+</div>
+</div>
+</div>
+</div>
+
+<script>
+let currentSlide = 0;
+let currentAboutSlide = 0;
+let totalSlides = 0;
+let currentGame = '';
+let currentTab = 'published';
+
+// Tab switching function
+function switchTab(tabName) {
+	currentTab = tabName;
+
+	// Update tab buttons
+	const publishedTab = document.getElementById('publishedTab');
+	const prototypeTab = document.getElementById('prototypeTab');
+	const publishedGames = document.getElementById('publishedGames');
+	const prototypeGames = document.getElementById('prototypeGames');
+
+	if (tabName === 'published') {
+		publishedTab.classList.add('bg-primary', 'text-white');
+		publishedTab.classList.remove('text-gray-600', 'hover:text-gray-800');
+		prototypeTab.classList.remove('bg-primary', 'text-white');
+		prototypeTab.classList.add('text-gray-600', 'hover:text-gray-800');
+
+		publishedGames.classList.remove('hidden');
+		prototypeGames.classList.add('hidden');
+	} else {
+		prototypeTab.classList.add('bg-primary', 'text-white');
+		prototypeTab.classList.remove('text-gray-600', 'hover:text-gray-800');
+		publishedTab.classList.remove('bg-primary', 'text-white');
+		publishedTab.classList.add('text-gray-600', 'hover:text-gray-800');
+
+		prototypeGames.classList.remove('hidden');
+		publishedGames.classList.add('hidden');
+	}
+}
+
+// About Modal Functions
+function openAboutModal() {
+document.getElementById('aboutModal').classList.remove('hidden');
+currentAboutSlide = 0;
+updateAboutSlider();
+}
+
+function closeAboutModal() {
+document.getElementById('aboutModal').classList.add('hidden');
+currentAboutSlide = 0;
+}
+
+function prevAboutSlide() {
+if (currentAboutSlide > 0) {
+currentAboutSlide--;
+updateAboutSlider();
+}
+}
+
+function nextAboutSlide() {
+if (currentAboutSlide < 1) { // We have 2 images (0 and 1)
+currentAboutSlide++;
+updateAboutSlider();
+}
+}
+
+function goToAboutSlide(index) {
+currentAboutSlide = index;
+updateAboutSlider();
+}
+
+function updateAboutSlider() {
+const slider = document.getElementById('aboutImageSlider');
+if (slider) {
+slider.style.transform = `translateX(-${currentAboutSlide * 100}%)`;
+}
+
+// Update indicators
+const indicators = document.querySelectorAll('.about-slide-indicator');
+indicators.forEach((indicator, index) => {
+if (index === currentAboutSlide) {
+indicator.classList.remove('bg-gray-300');
+indicator.classList.add('bg-primary');
+} else {
+indicator.classList.remove('bg-primary');
+indicator.classList.add('bg-gray-300');
+}
+});
+}
+
+// Game data
+const gameData = {
+mergeCharacter: {
+title: 'Merge Character: Mini Game',
+youtubeUrl: 'https://www.youtube.com/watch?v=MfWBFS5QBY4',
+playStoreUrl: 'https://play.google.com/store/apps/details?id=com.DagmaGameStudio.MergeBuildProject&pli=1',
+images: [
+'1VrSUHxk1tLEdzipRMtCyTFd8TGDRnLdU',
+'1e6aH7IWRKUIlKYkbEt9js5wxksUHBSxM',
+'1gdMb0s1kiYzTkpCi5Mb5cnPTmwnMdyHt',
+'1YY-BPiiwPE0ZVR8pIQr00RegW-Ob-WmC',
+'1JiQhIoFaBhhZe6Asg_11O_1zBOiLiZMu'
+],
+description: `
+<p class="mb-3">⚔️ <strong>Merge Character</strong> - Combine heroes, level up, and create the ultimate team! 💪</p>
+<p class="mb-3">🚀 Unlock upgrades to boost production and rise to the top. 🏆</p>
+<p class="mb-3">🔥 Challenge other players to prove your strategy and power in this fast-paced hero fusion game.</p>
+<p class="mb-3"><strong>Game Description:</strong></p>
+<p>"Hero Creator" is an innovative and captivating hero fusion game that keeps players engaged with its fast-paced mechanics and strategic gameplay. As the game's protagonist, you have access to 20 slots where heroes are automatically produced every 5 seconds. Your mission is to combine heroes of the same level to create more powerful versions and gradually build a formidable team of champions. 💥</p>
+`
+},
+mergeOfDagma: {
+title: 'Merge Of Dagma',
+youtubeUrl: 'https://www.youtube.com/watch?v=78BFGB8LJVg',
+playStoreUrl: 'https://play.google.com/store/apps/details?id=com.DagmaGameStudio.MergeOfDagma',
+images: [
+'14bOnjsuk9WRfRDqppxEOiHSXO38TCBYC',
+'1JfDoamChbArAvNrxag4eu3lsLs4oq9pr',
+'1BDJ2n_yJ2HsPEFrAo3y3BRQKnIW_I6jg',
+'1RO8nMmplbAf7EJhCBiyS2tgvQMM-hpnc',
+'1MBdytEkNykAYsXmLv-x5DNvFfhb8-ozw'
+],
+description: `
+<p class="mb-3">📜 <strong>Merge Of Dagma</strong> - Legendary Character Fusion Game! ⚔️🔥</p>
+<p class="mb-3">🌟 <strong>Merge Of Dagma</strong> is an exciting <strong>character merging</strong> game set in the <strong>World of Dagma</strong> universe! Create your own heroes, combine their powers, and embark on an <strong>epic adventure</strong> with <strong>legendary warriors</strong>! 🏆💥</p>
+<p class="mb-3">⚔️ <strong>How to Play?</strong></p>
+<p class="mb-2">🔹 Drag and merge two characters of the same level to unlock more powerful warriors!</p>
+<p class="mb-2">🔹 Discover <strong>warriors, mages, assassins, and legendary creatures</strong> from different classes! 🧙‍♂️👹</p>
+<p class="mb-2">🔹 Strengthen your army and upgrade your heroes with <strong>spells and equipment</strong>! ✨</p>
+<p class="mb-3">🔹 Fight monsters in <strong>PvE quests</strong> or challenge <strong>powerful boss enemies</strong>! 🏹🐉</p>
+<p class="mb-3">🔥 <strong>Features:</strong></p>
+<p class="mb-2">✅ <strong>Addictive character merging mechanics!</strong></p>
+<p class="mb-2">✅ <strong>Dozens of unique heroes with special abilities!</strong></p>
+<p class="mb-2">✅ <strong>Adventure in the mystical MMORPG world of World of Dagma!</strong></p>
+<p class="mb-2">✅ <strong>Level up, unlock new regions, and collect legendary warriors!</strong></p>
+<p class="mb-3">✅ <strong>Immersive RPG experience with stunning visuals and sound effects!</strong></p>
+<p>⚡ Merge your warriors, <strong>unlock legendary powers</strong>, and <strong>build the ultimate army in Merge Of Dagma!</strong> 🏰👑</p>
+`
+},
+litlestarsWonderland: {
+title: 'Litlestars Wonderland: Cow Game',
+youtubeUrl: 'https://www.youtube.com/watch?v=7Ml3lawpCRQ',
+playStoreUrl: 'https://play.google.com/store/apps/details?id=com.DagmaGameStudio.LittleStarsWonderLand',
+images: [
+'1iPhgCsJdagmE-W9HKR67CFYS77dy-EbL',
+'1Q6PAR3zuYO_3TJDqRkfjlbLB64pTpQn3',
+'1qprzXxAYgwgzo9-mosyMPtVKp8AsxMbP',
+'18I5u7ysdJmRToMR8r1qCGDLHdKKxbYE0',
+'1nogNsN5jGbkehSkB2bU2hykiid4lLCwa',
+'1AZjpWxlD7n9DvHRs7Cdy5tR096GoK1va'
+],
+description: `
+<p class="mb-3">🍼 Welcome to our exciting game collection! Experience the joy of taking care of adorable babies, collecting stars, popping balloons, and immersing yourself in the life of a cow ✨</p>
+<p class="mb-3">🐄 With three engaging mini-games featuring our lovable cow, including cow racing, tractor driving, and airplane piloting, there's never a dull moment 🚜✈️</p>
+<p class="mb-3">🎮 <strong>Game Features:</strong></p>
+<p class="mb-2">🔊 Animal sound recognition challenges</p>
+<p class="mb-2">🧹 House cleaning mini-games</p>
+<p class="mb-2">🎯 Interactive learning sessions where you identify objects based on their sounds</p>
+<p class="mb-2">🌟 Star collection and balloon popping activities</p>
+<p class="mb-2">🚜 Exciting cow racing adventures</p>
+<p class="mb-2">✈️ Airplane piloting experiences</p>
+<p class="mb-3">🎈 Whether you're a kid or an adult, this game has something for everyone!</p>
+<p>🌟 Get ready for endless fun and learning in one action-packed game! 🎈🔊</p>
+`
+},
+colorfulPlayland: {
+title: 'Colorful Playland: Baby Game',
+youtubeUrl: 'https://www.youtube.com/watch?v=yDs5ZuWxQ8Q',
+playStoreUrl: 'https://play.google.com/store/apps/details?id=com.DagmaGameStudio.ColorFulPlayland',
+images: [
+'15MKKXwS_9szgnQtaFke4DLDO5IsYBON0',
+'1nRIF69FU1d-sRjBKyRjEFbgyPU6abk68',
+'1B8KuZJvLqXauA8ZHQuRz_1pbDdJCbOBV',
+'1B9MHFuLUVoL4ti66LxccJAaCwLT1IU3j',
+'1bxjSIkznUDVSTFQnVpslUeMqIQ575Gvw',
+'13OT8BbkHicElWoqUpwOSn5iWUZr056oI'
+],
+description: `
+<p class="mb-3">🎮 <strong>Colorful Playland - Baby Game</strong> offers a vibrant and exciting experience filled with carefully designed interactive mini-games for children! 🎈</p>
+<p class="mb-3">🌈 In this fun world, kids of all ages will discover many unique mini-games such as balloon popping 🎈, star popping ⭐, corn peeling 🌽, and a cow game 🐮. The game is designed to help improve hand-eye coordination, enhance motor skills, and support learning through play.</p>
+<p class="mb-3">🎯 <strong>Features:</strong></p>
+<p class="mb-2">🎈 <strong>Variety of Mini-Games:</strong> Enjoy balloon popping, star popping, corn peeling, cow game, and more!</p>
+<p class="mb-2">📚 <strong>Educational & Fun:</strong> Combines learning with entertainment to support cognitive and motor development.</p>
+<p class="mb-2">🎨 <strong>Vibrant Graphics & Sound Effects:</strong> Engaging, colorful graphics and cheerful music capture children's attention.</p>
+<p class="mb-2">🎮 <strong>Easy Gameplay:</strong> Simple and intuitive controls make it easy for every child to play.</p>
+<p class="mb-2">🛡️ <strong>Safe Content:</strong> Developed specifically for children, offering content that parents can trust.</p>
+<p class="mb-3">🌟 <strong>Why Choose Colorful Playland?</strong></p>
+<p class="mb-2">This game not only delivers fun but also enhances problem-solving skills, creativity, and concentration. The points and rewards earned during play help track progress and boost motivation.</p>
+<p>🚀 Download now to experience this unique blend of fun, adventure, and learning, and add a splash of color to your child's development! 🎉</p>
+`
+},
+merge2048Extreme: {
+title: 'Merge 2048: Extreme 2048',
+deprecated: true,
+youtubeUrl: 'https://www.youtube.com/watch?v=9RyYegfkkTY',
+images: [
+'1KEnvJqer3YSA6Es04a5A_6r83d69_Moq',
+'1MBfGZUjEHM7c20j9oSmc-TGT2MucxRR7',
+'1O-tgkEXVTa890mEvV-z0Qq32cl_hm3wI',
+'11Sy2zhMy6JhYJO0GJ4-t-3yU__oon0D5',
+'1wvaKIKOd3ErkCiJGQR4wy0GOe2Ea5CIg'
+],
+description: `
+<p class="mb-3">🧠 <strong>2048 Extreme</strong> - An Addictive Puzzle Game Filled with Strategy and Intelligence! 🧩</p>
+<p class="mb-3">🔢 2048 Extreme takes the classic 2048 game to a new level of excitement and fun! Easy to learn but hard to master, this addictive puzzle game challenges you to merge numbers to reach 2048. Test your strategic thinking and quick decision-making skills to enhance your mental abilities.</p>
+<p class="mb-3">🎯 <strong>Features:</strong></p>
+<p class="mb-2">👥 <strong>User-friendly interface</strong></p>
+<p class="mb-2">🌟 <strong>Addictive game mechanics</strong></p>
+<p class="mb-2">🚀 <strong>Different difficulty levels</strong></p>
+<p class="mb-2">🏆 <strong>Global leaderboards</strong></p>
+<p class="mb-2">🎁 <strong>Daily rewards and achievements</strong></p>
+<p class="mb-3">Perfect for players of all ages, 2048 Extreme is an ideal way to spend your free time in a fun and mentally stimulating way! 📈</p>
+<p class="mb-3">🌟 <strong>Why 2048 Extreme?</strong></p>
+<p class="mb-2">✅ Easy to play, but hard to master</p>
+<p class="mb-2">✅ Intelligence-boosting and strategy-focused</p>
+<p class="mb-2">✅ Opportunity to compete on global leaderboards</p>
+<p class="mb-2">✅ Addictive and fun gaming experience</p>
+<p class="mb-3"><span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">⚠️ <strong>Note:</strong> This game has been deprecated and is no longer available on app stores.</span></p>
+<p>💡 This project showcases our expertise in puzzle game development and number-based game mechanics!</p>
+`
+},
+// Prototype Games
+bombermanMultiplayer: {
+	title: 'Bomberman Multiplayer: Prototype',
+	prototype: true,
+	youtubeUrl: 'https://www.youtube.com/watch?v=vt9rt8RrzRc',
+	githubUrl: 'https://github.com/salihbaglan', // GitHub repository linki
+	images: [
+	'1spi4TmowC06bzNKUrAXHs56vSZGv2D2J',
+	'1U-d1om7EGx7yplVNnkQ_2TKDB7bPufMQ',
+	'18cm1SjxxIA06AIPCKuYZRLA_l4PsD2mF',
+	'1SBjnUN3BhtxoLU0J8XfwzVCY98IDs0z-'
+	],
+	description: `
+	<p class="mb-3">� <strong>Bomberman Multiplayer</strong> - Classic bomberman game reimagined with modern online multiplayer technology! �</p>
+	<p class="mb-3">🌐 Experience the nostalgic gameplay of Bomberman with real-time multiplayer support, featuring advanced networking capabilities and seamless online gameplay!</p>
+	<p class="mb-3">🎮 <strong>Prototype Features:</strong></p>
+	<p class="mb-2">� <strong>Classic Bomberman Gameplay:</strong> Place bombs, destroy walls, and eliminate opponents</p>
+	<p class="mb-2">🌐 <strong>Real-time Multiplayer:</strong> Online multiplayer support using Photon networking</p>
+	<p class="mb-2">� <strong>Lobby System:</strong> Create and join game rooms with friends</p>
+	<p class="mb-2">💬 <strong>Chat Functionality:</strong> In-game chat system for player communication</p>
+	<p class="mb-2">� <strong>Playable State:</strong> Fully functional gameplay mechanics ready for testing</p>
+	<p class="mb-3">🔧 <strong>Technical Implementation:</strong></p>
+	<p class="mb-2"><strong>Photon PUN2:</strong> Real-time multiplayer networking for seamless online gameplay</p>
+	<p class="mb-2"><strong>PlayFab:</strong> Backend services for player authentication and game data management</p>
+	<p class="mb-2"><strong>Unity Networking:</strong> Optimized network synchronization for smooth multiplayer experience</p>
+	<p class="mb-3">� <strong>Current Status:</strong></p>
+	<p class="mb-2">The prototype is in a playable state with core features implemented including lobby system, chat functionality, and multiplayer gameplay mechanics. Players can join rooms, communicate, and engage in classic Bomberman battles online.</p>
+	<p>� This project demonstrates expertise in multiplayer game development, network programming, and real-time synchronization systems!</p>
+	`
+},
+bulletRush: {
+	title: 'Bullet Rush: Prototype',
+	prototype: true,
+	youtubeUrl: 'https://www.youtube.com/watch?v=T_5RMIl44g0',
+	githubUrl: 'https://github.com/salihbaglan/Bullet-Rush-Hyper-Casual-',
+	images: [
+	'1jNHzASOBmmdKFZfA0wQRICsy_Uk5FrPm',
+	'1xV7DtpkL0qGvbqtT6S_IE8kDgz8VMkIn',
+	'1ARAAY_noLSVGXvlDD5UibyfqHryYQT48',
+	'1qJ8tbDnFc1B_mknvF_L2Xhj6X6ygN6b0',
+	'1heUrZluYflmC6YlMvXTnmyil-8PtmlIM'
+	],
+	description: `
+	<p class="mb-3">🎯 <strong>Bullet Rush</strong> - Top-down action-arcade game with fast-paced gameplay and simple mechanics! 🔫</p>
+	<p class="mb-3">🚁 Survive enemy waves, reach the helicopter, and complete challenging levels in this mobile-based action experience!</p>
+	<p class="mb-3">🎮 <strong>Gameplay Mechanics:</strong></p>
+	<p class="mb-2">🎯 <strong>Objective:</strong> Destroy enemy waves to complete levels and reach the helicopter at the end</p>
+	<p class="mb-2">🕹️ <strong>Controls:</strong> Drag your finger on screen to move character - automatic shooting system</p>
+	<p class="mb-2">🔫 <strong>Auto-Fire:</strong> Character shoots automatically, you only control movement and direction</p>
+	<p class="mb-2">💣 <strong>Power-ups:</strong> Speed boost, explosion effects, and various enhancements</p>
+	<p class="mb-2">🏆 <strong>Combo System:</strong> Eliminate multiple enemies quickly to increase your score</p>
+	<p class="mb-3">👾 <strong>Enemies & Threats:</strong></p>
+	<p class="mb-2">🌊 <strong>Wave System:</strong> Creature-like enemies come in waves</p>
+	<p class="mb-2">⚡ <strong>Contact Damage:</strong> Enemies reduce health when they touch the character</p>
+	<p class="mb-2">📈 <strong>Progressive Difficulty:</strong> Enemies become faster and more numerous over time</p>
+	<p class="mb-3">🚁 <strong>Level Completion:</strong></p>
+	<p class="mb-2">Each level ends with reaching a helicopter for escape, similar to classic arcade games. The game features intuitive one-finger controls perfect for mobile gaming.</p>
+	<p>🎮 This hyper-casual game demonstrates expertise in mobile game mechanics, touch controls, and engaging arcade-style gameplay!</p>
+	`
+},
+helixJump: {
+	title: 'Helix Jump Clone: Prototype',
+	prototype: true,
+	youtubeUrl: 'https://youtu.be/WbDiuX99ASg',
+	githubUrl: 'https://github.com/salihbaglan/Helix-Jump/tree/main',
+	images: [
+	'1T3zkWkpK2tyrzFybxJbcradDP1rQUQuU',
+	'1wjO6wRKOwcQLuOsD8Xml6ePlUtlmNQvS',
+	'1unAjRI8EvrPvap4BdhhL0MAWgO0Jt4_o',
+	'1Fb88WL5u1B1O0i-GgDvCA_9k3lJpWgZQ',
+	'1UtgnMVLyBksi2jTW8orZ0_wpVWlsSHhI'
+	],
+	description: `
+	<p class="mb-3">🌀 <strong>Helix Jump Clone</strong> - Addictive spiral tower jumping game with smooth physics and colorful visuals! 🎯</p>
+	<p class="mb-3">⚡ Navigate through rotating helix platforms, avoid obstacles, and reach the bottom in this engaging casual game!</p>
+	<p class="mb-3">🎮 <strong>Gameplay Mechanics:</strong></p>
+	<p class="mb-2">🌀 <strong>Spiral Navigation:</strong> Guide the ball through rotating helix tower structures</p>
+	<p class="mb-2">🎯 <strong>Objective:</strong> Reach the bottom of the tower by passing through platform gaps</p>
+	<p class="mb-2">🚫 <strong>Obstacle Avoidance:</strong> Avoid colored platform sections that cause game over</p>
+	<p class="mb-2">⚡ <strong>Momentum System:</strong> Build speed by consecutive successful jumps</p>
+	<p class="mb-2">🎨 <strong>Visual Feedback:</strong> Satisfying particle effects and smooth animations</p>
+	<p class="mb-3">🕹️ <strong>Controls & Features:</strong></p>
+	<p class="mb-2">👆 <strong>One-Touch Control:</strong> Simple tap and hold to rotate the helix tower</p>
+	<p class="mb-2">🎵 <strong>Audio Design:</strong> Satisfying sound effects for jumps and collisions</p>
+	<p class="mb-2">🌈 <strong>Colorful Design:</strong> Vibrant colors and smooth gradient backgrounds</p>
+	<p class="mb-2">📱 <strong>Mobile Optimized:</strong> Perfect for quick gaming sessions on mobile devices</p>
+	<p class="mb-3">🏆 <strong>Technical Highlights:</strong></p>
+	<p class="mb-2">⚙️ <strong>Physics System:</strong> Realistic ball physics with gravity and bounce mechanics</p>
+	<p class="mb-2">🔄 <strong>Rotation Mechanics:</strong> Smooth helix rotation with touch input responsiveness</p>
+	<p class="mb-2">🎨 <strong>Procedural Generation:</strong> Dynamic platform layouts for varied gameplay</p>
+	<p class="mb-3">🎯 <strong>Game Features:</strong></p>
+	<p class="mb-2">This clone captures the addictive essence of the original Helix Jump with smooth controls, satisfying physics, and engaging visual design. Perfect example of hyper-casual game development.</p>
+	<p>🌀 Demonstrates expertise in physics-based gameplay, touch controls, and casual game mechanics that keep players engaged!</p>
+	`
+},
+countMasters: {
+	title: 'Count Masters Clone: Prototype',
+	prototype: true,
+	githubUrl: 'https://github.com/salihbaglan/Count-Master-Hyper-Casual-',
+	images: [
+	'1AKtOplVCU5skDTJFUG5sPe-MT9HffsH9',
+	'1KYgT__rY8qX0ynCAz84gZaApAdn8fb5M'
+	],
+	description: `
+	<p class="mb-3">🧍‍♂️ <strong>Count Masters Clone</strong> - Hyper-casual crowd running game with strategic gate mechanics! 🚪</p>
+	<p class="mb-3">⚡ Build your stickman army, make strategic choices, and defeat enemies in epic battles!</p>
+	<p class="mb-3">🎮 <strong>Game Type & Features:</strong></p>
+	<p class="mb-2">🎯 <strong>Hyper-Casual:</strong> Easy to learn, quick to play, perfect for mobile gaming</p>
+	<p class="mb-2">🏃‍♂️ <strong>Running & Strategy:</strong> Combines endless running with strategic decision making</p>
+	<p class="mb-2">🧍‍♂️ <strong>Character Start:</strong> Begin with a single stickman character</p>
+	<p class="mb-2">🎯 <strong>Objective:</strong> Collect as many "people" as possible to build your army</p>
+	<p class="mb-3">🚪 <strong>Gate Mechanics:</strong></p>
+	<p class="mb-2">➕ <strong>Mathematical Gates:</strong> Pass through gates with numbers and operations (+50, x2, -30)</p>
+	<p class="mb-2">📈 <strong>Army Growth:</strong> Your crowd grows or shrinks based on gate choices</p>
+	<p class="mb-2">🧠 <strong>Strategic Decisions:</strong> Choose the most advantageous gates for maximum army size</p>
+	<p class="mb-2">⚡ <strong>Quick Thinking:</strong> Make fast decisions - sometimes +50 is better than x2!</p>
+	<p class="mb-3">⚔️ <strong>Combat & Obstacles:</strong></p>
+	<p class="mb-2">🗡️ <strong>Enemy Battles:</strong> Automatic combat where numbers determine victory</p>
+	<p class="mb-2">🏰 <strong>Boss Fights:</strong> Epic end-level battles requiring large armies</p>
+	<p class="mb-2">⚠️ <strong>Obstacles:</strong> Spikes, rotating blades, falling platforms reduce your crowd</p>
+	<p class="mb-2">🛡️ <strong>Survival Strategy:</strong> Balance risk vs reward when choosing paths</p>
+	<p class="mb-3">🎨 <strong>Visual & Technical:</strong></p>
+	<p class="mb-2">🌈 <strong>Colorful Graphics:</strong> Vibrant visuals with smooth animations</p>
+	<p class="mb-2">📱 <strong>Mobile Optimized:</strong> Perfect touch controls for mobile devices</p>
+	<p class="mb-2">🎵 <strong>Engaging Audio:</strong> Satisfying sound effects for crowd growth and battles</p>
+	<p>🏆 This clone demonstrates expertise in hyper-casual game mechanics, crowd simulation, and strategic gameplay elements!</p>
+	`
+},
+angryBirds: {
+	title: 'Angry Birds Clone: Prototype',
+	prototype: true,
+	youtubeUrl: 'https://www.youtube.com/watch?v=Giu_rjbjDlw',
+	githubUrl: 'https://github.com/salihbaglan/Angry-Birds',
+	images: [
+	'1WdAHvihKUgd0KpZfOGGqmUgNRvHLfNQf',
+	'1kbzsI47G7TJeRTmWq4ZUO5_LGZLTStJz',
+	'1acJNsS_g7-eq_I5VBQbClmqSuoFy6m-M',
+	'1HWZB4kE2rtNfCOEg0onnFG8ALwTn9YjW',
+	'1pCzYojL-671437a1WLvWFhoRTmtXEAa3',
+	'1BcTHWpT0w9rY1iXS0-tDzE0Jub7o-N7_'
+	],
+	description: `
+	<p class="mb-3">🐦 <strong>Angry Birds Clone</strong> - Classic physics-based puzzle game with innovative evolution mechanics! 🧬</p>
+	<p class="mb-3">🎯 Launch birds with precision, destroy pig structures, and discover the revolutionary bird evolution system!</p>
+	<p class="mb-3">🎮 <strong>Classic Gameplay:</strong></p>
+	<p class="mb-2">🎯 <strong>Slingshot Mechanics:</strong> Aim and launch birds with realistic physics</p>
+	<p class="mb-2">🏗️ <strong>Structure Destruction:</strong> Destroy wooden, stone, and glass structures</p>
+	<p class="mb-2">🐷 <strong>Target Elimination:</strong> Defeat all pigs to complete levels</p>
+	<p class="mb-2">⭐ <strong>Star Rating System:</strong> Achieve perfect scores with strategic gameplay</p>
+	<p class="mb-2">🎨 <strong>Authentic Design:</strong> Faithful recreation of the original Angry Birds experience</p>
+	<p class="mb-3">🧬 <strong>Evolution Feature (NEW!):</strong></p>
+	<p class="mb-2">🔬 <strong>Bird Fusion:</strong> Combine two different bird types to create evolved species</p>
+	<p class="mb-2">⚡ <strong>Enhanced Powers:</strong> Evolved birds possess combined abilities of their parent birds</p>
+	<p class="mb-2">🌟 <strong>Unique Abilities:</strong> Each evolution creates birds with new, powerful special attacks</p>
+	<p class="mb-2">🧪 <strong>Experimentation:</strong> Discover different evolution combinations and their effects</p>
+	<p class="mb-2">🚀 <strong>Strategic Depth:</strong> Plan your bird usage to maximize evolution potential</p>
+	<p class="mb-3">🔧 <strong>Technical Features:</strong></p>
+	<p class="mb-2">⚙️ <strong>Realistic Physics:</strong> Accurate projectile motion and collision detection</p>
+	<p class="mb-2">💥 <strong>Destruction System:</strong> Dynamic structure collapse with realistic debris</p>
+	<p class="mb-2">🎵 <strong>Audio Design:</strong> Authentic sound effects and satisfying destruction audio</p>
+	<p class="mb-2">📱 <strong>Touch Controls:</strong> Intuitive slingshot controls optimized for mobile</p>
+	<p class="mb-3">🎯 <strong>Innovation Highlight:</strong></p>
+	<p class="mb-2">The evolution system adds a completely new strategic layer to the classic Angry Birds formula. Players must think beyond individual shots and consider how to best utilize bird combinations for maximum effectiveness.</p>
+	<p>🧬 This project demonstrates expertise in physics simulation, game mechanics innovation, and creative feature development!</p>
+	`
+}
+};
+
+function openGameModal(gameType) {
+currentGame = gameType;
+const game = gameData[gameType];
+
+// Set title
+document.getElementById('modalTitle').textContent = game.title;
+
+// Set description
+document.getElementById('gameDescription').innerHTML = game.description;
+
+// Load images
+loadGameImages(game.images);
+
+// Load action buttons
+loadActionButtons(game);
+
+// Show modal
+document.getElementById('gameModal').classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+
+// Reset slide
+currentSlide = 0;
+updateSlider();
+}
+
+function loadActionButtons(game) {
+const actionButtons = document.getElementById('actionButtons');
+actionButtons.innerHTML = '';
+
+// YouTube button (always present)
+if (game.youtubeUrl) {
+const youtubeButton = document.createElement('a');
+youtubeButton.href = game.youtubeUrl;
+youtubeButton.target = '_blank';
+youtubeButton.className = 'flex-1 bg-red-600 text-white py-3 px-6 rounded-button text-center font-medium hover:bg-red-700 transition-colors flex items-center justify-center gap-2';
+youtubeButton.innerHTML = `
+<i class="ri-youtube-line text-xl"></i>
+Watch on YouTube
+`;
+actionButtons.appendChild(youtubeButton);
+}
+
+// Play Store button (only if not deprecated and not prototype)
+if (game.playStoreUrl && !game.deprecated && !game.prototype) {
+const playStoreButton = document.createElement('a');
+playStoreButton.href = game.playStoreUrl;
+playStoreButton.target = '_blank';
+playStoreButton.className = 'flex-1 bg-green-600 text-white py-3 px-6 rounded-button text-center font-medium hover:bg-green-700 transition-colors flex items-center justify-center gap-2';
+playStoreButton.innerHTML = `
+<i class="ri-google-play-line text-xl"></i>
+Download on Play Store
+`;
+actionButtons.appendChild(playStoreButton);
+} else if (game.deprecated) {
+// Deprecated notice button
+const deprecatedButton = document.createElement('div');
+deprecatedButton.className = 'flex-1 bg-gray-400 text-white py-3 px-6 rounded-button text-center font-medium flex items-center justify-center gap-2 cursor-not-allowed';
+deprecatedButton.innerHTML = `
+<i class="ri-close-circle-line text-xl"></i>
+No longer available on Play Store
+`;
+actionButtons.appendChild(deprecatedButton);
+} else if (game.prototype) {
+// Check if GitHub URL exists and if it's accessible
+if (game.githubUrl && (game.githubUrl.includes('Bullet-Rush') || game.githubUrl.includes('Helix-Jump') || game.githubUrl.includes('Count-Master') || game.githubUrl.includes('Angry-Birds'))) {
+	// GitHub button for accessible repositories
+	const githubButton = document.createElement('a');
+	githubButton.href = game.githubUrl;
+	githubButton.target = '_blank';
+	githubButton.className = 'flex-1 bg-gray-800 text-white py-3 px-6 rounded-button text-center font-medium hover:bg-gray-900 transition-colors flex items-center justify-center gap-2';
+	githubButton.innerHTML = `
+	<i class="ri-github-line text-xl"></i>
+	View on GitHub
+	`;
+	actionButtons.appendChild(githubButton);
+} else {
+	// Private repository notice for other prototype games
+	const privateButton = document.createElement('div');
+	privateButton.className = 'flex-1 bg-gray-600 text-white py-3 px-6 rounded-button text-center font-medium flex items-center justify-center gap-2 cursor-not-allowed';
+	privateButton.innerHTML = `
+	<i class="ri-lock-line text-xl"></i>
+	Private Repository
+	`;
+	actionButtons.appendChild(privateButton);
+}
+}
+}
+
+function loadGameImages(imageIds) {
+totalSlides = imageIds.length;
+const slider = document.getElementById('imageSlider');
+const indicators = document.getElementById('slideIndicators');
+
+// Clear existing content
+slider.innerHTML = '';
+indicators.innerHTML = '';
+
+// Load images
+imageIds.forEach((imageId, index) => {
+// Create image container
+const imageContainer = document.createElement('div');
+imageContainer.className = 'w-full flex-shrink-0 flex items-center justify-center min-h-[400px] md:min-h-[500px]';
+
+const img = document.createElement('img');
+img.src = `https://drive.google.com/thumbnail?id=${imageId}&sz=w1200`;
+img.className = 'max-w-full max-h-[400px] md:max-h-[500px] object-contain';
+img.alt = `Screenshot ${index + 1}`;
+
+imageContainer.appendChild(img);
+slider.appendChild(imageContainer);
+
+// Create indicator
+const indicator = document.createElement('button');
+indicator.className = 'w-3 h-3 rounded-full bg-gray-300 slide-indicator';
+indicator.onclick = () => goToSlide(index);
+indicators.appendChild(indicator);
+});
+}
+
+function closeGameModal() {
+document.getElementById('gameModal').classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+
+function nextSlide() {
+currentSlide = (currentSlide + 1) % totalSlides;
+updateSlider();
+}
+
+function prevSlide() {
+currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+updateSlider();
+}
+
+function goToSlide(index) {
+currentSlide = index;
+updateSlider();
+}
+
+function updateSlider() {
+const slider = document.getElementById('imageSlider');
+const translateX = -currentSlide * 100;
+slider.style.transform = `translateX(${translateX}%)`;
+
+// Update indicators
+const indicators = document.querySelectorAll('.slide-indicator');
+indicators.forEach((indicator, index) => {
+if (index === currentSlide) {
+indicator.classList.add('active');
+indicator.classList.remove('bg-gray-300');
+indicator.classList.add('bg-primary');
+} else {
+indicator.classList.remove('active');
+indicator.classList.remove('bg-primary');
+indicator.classList.add('bg-gray-300');
+}
+});
+}
+
+// Close modal when clicking outside
+document.getElementById('gameModal').addEventListener('click', function(e) {
+if (e.target === this) {
+closeGameModal();
+}
+});
+
+// Auto-slide every 5 seconds
+setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>
